@@ -21,18 +21,16 @@ import org.mokee.hardware.util.FileUtils;
 public class TapToWake {
 
     private static String CONTROL_PATH = "/sys/devices/virtual/input/clearpad/wakeup_gesture";
-    private static boolean mEnabled = true;
 
     public static boolean isSupported() {
-        return true;
+        return FileUtils.fileExist(CONTROL_PATH);
     }
 
-    public static boolean isEnabled()  {
-        return mEnabled;
+    public static boolean isEnabled() {
+        return FileUtils.readOneLine(CONTROL_PATH).equals("1");
     }
 
-    public static boolean setEnabled(boolean state)  {
-        mEnabled = state;
-        return FileUtils.writeLine(CONTROL_PATH, (state ? "1" : "0"));
+    public static boolean setEnabled(boolean state) {
+        return FileUtils.altWrite(state, CONTROL_PATH);
     }
 }
