@@ -66,11 +66,7 @@ WIFI_DRIVER_FW_PATH_AP           := "ap"
 BOARD_USE_SONY_MACUPDATE := true
 
 # Camera
-COMMON_GLOBAL_CFLAGS += -DQCOM_BSP_CAMERA_ABI_HACK
 USE_DEVICE_SPECIFIC_CAMERA := true
-
-# Use retire fence from MDP driver
-TARGET_DISPLAY_USE_RETIRE_FENCE := true
 
 # GPS
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := $(TARGET_BOARD_PLATFORM)
@@ -111,9 +107,7 @@ TARGET_QCOM_MEDIA_VARIANT := caf
 BOARD_USES_ALSA_AUDIO := true
 BOARD_USES_LEGACY_ALSA_AUDIO := true
 TARGET_USES_QCOM_COMPRESSED_AUDIO := true
-
-# RIL
-BOARD_RIL_NO_CELLINFOLIST := true
+BOARD_HAVE_NEW_QCOM_CSDCLIENT := true
 
 # QCOM enhanced A/V
 TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
@@ -174,7 +168,6 @@ BOARD_SEPOLICY_UNION += \
     netmgrd.te \
     qmux.te \
     rild.te \
-    rmt.te \
     surfaceflinger.te \
     system.te \
     tee.te \
