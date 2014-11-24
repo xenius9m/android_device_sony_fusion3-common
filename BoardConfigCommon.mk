@@ -1,4 +1,4 @@
-# Copyright (C) 2013 The CyanogenMod Project
+# Copyright (C) 2013 The MoKee OpenSource Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -154,7 +154,7 @@ BOARD_SEPOLICY_UNION += \
     ueventd.te \
     wpa_supplicant.te
 
-BOARD_HARDWARE_CLASS := device/sony/fusion3-common/cmhw
+BOARD_HARDWARE_CLASS := device/sony/fusion3-common/mkhw
 
 TARGET_USES_LOGD := false
 
