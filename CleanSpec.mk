@@ -60,3 +60,4 @@ $(call add-clean-step, rm -f $(PRODUCT_OUT)/recovery/root/default.prop)
 $(call add-clean-step, rm -f $(PRODUCT_OUT)/system/build.prop)
 
 $(call add-clean-step, rm -rf $(PRODUCT_OUT)/combinedroot/init)
+$(call add-clean-step, rm -f $(PRODUCT_OUT)/recovery/root/charger)
